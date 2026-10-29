@@ -1,0 +1,5 @@
+# Copy to .dev.vars for local development. `npm run setup` sets SETUP_CODE in production.
+SETUP_CODE=choose-a-one-time-code
+# Optional: Grok Bot normally connects from Settings → Grok Bot. These are a fallback.
+# GROK_BOT_WEBHOOK_URL=https://example.com/grok-webhook
+# GROK_BOT_WEBHOOK_AUTH_HEADER=Authorization: Bearer replace-me

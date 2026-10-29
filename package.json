@@ -1,0 +1,38 @@
+{
+  "name": "herald",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "vite dev",
+    "build": "vite build",
+    "deploy": "node scripts/wrangler.mjs d1 migrations apply DB --remote && vite build && wrangler deploy",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "db:migrate:local": "node scripts/wrangler.mjs d1 migrations apply DB --local",
+    "db:migrate:remote": "node scripts/wrangler.mjs d1 migrations apply DB --remote",
+    "cf-typegen": "wrangler types src/worker/env.d.ts --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
+    "@simplewebauthn/server": "^14.0.3",
+    "hono": "^4.13.14",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.65.0",
+    "@cloudflare/vitest-plugin": "^1.4.9",
+    "@cloudflare/workers-types": "^5.20261028.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.5",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.154.0"
+  }
+}

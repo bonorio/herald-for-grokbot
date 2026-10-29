@@ -1,0 +1,10 @@
+node_modules
+dist
+.wrangler
+.dev.vars
+.env
+.DS_Store
+.setup-code
+.vapid.json
+.herald-key
+wrangler.jsonc
